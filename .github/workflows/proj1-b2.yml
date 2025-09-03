@@ -9,8 +9,11 @@ jobs:
 
     steps:
       - name: Clone proj1 (b2)
+        env:
+          GIT_USER: insthync
+          GIT_TOKEN: ${{ secrets.GIT_TOKEN }}
         run: |
-          git clone https://github.com/insthync/sample-checkout-build-github-proj1.git
+          git clone https://${GIT_USER}:${GIT_TOKEN}@github.com/insthync/sample-checkout-build-github-proj1.git
           cd sample-checkout-build-github-proj1
           git checkout b2  # Checkout b2 branch
           
