@@ -1,0 +1,34 @@
+name: proj1-main
+
+on:
+  workflow_dispatch: # Run manually
+  push:
+    branches: [ main ]
+
+jobs:
+  build-docker-proj1:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clone proj1
+        run: |
+          git clone https://github.com/insthync/sample-checkout-build-github-proj1.git
+          cd sample-checkout-build-github-proj1
+          git checkout main  # Checkout main branch
+          
+      - name: Login to docker hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          
+      - name: Build proj1 as docker image (locally as sample-checkout-build-github-proj1:main)
+        run: |
+          cd sample-checkout-build-github-proj1
+          docker build -t sample-checkout-build-github-proj1:main .
+          
+      - name: Push proj1 docker image to docker hub (to insthync/sample-checkout-build-github-proj1:main)
+        run: |
+          docker tag sample-checkout-build-github-proj1:main insthync/sample-checkout-build-github-proj1:main
+          docker push insthync/sample-checkout-build-github-proj1:main
+        
