@@ -1,7 +1,7 @@
 name: proj1-b2
 
 on:
-  workflow_call:
+  workflow_dispatch:
 
 jobs:
   build-docker-proj1:
