@@ -4,6 +4,7 @@ on:
   repository_dispatch:
     types: [auto-build-docker-proj1]
   workflow_dispatch:
+  workflow_call:
 
 jobs:
   build-docker-proj1:
