@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Clone proj1
+      - name: Clone proj1 (auto)
         run: |
           git clone https://github.com/insthync/sample-checkout-build-github-proj1.git
           cd sample-checkout-build-github-proj1
