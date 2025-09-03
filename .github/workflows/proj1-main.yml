@@ -1,8 +1,7 @@
 name: proj1-main
 
 on:
-  push:
-    branches: [ main ]
+  workflow_call:
 
 jobs:
   build-docker-proj1:
