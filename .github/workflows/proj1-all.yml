@@ -6,7 +6,12 @@ on:
 jobs:
   run-main:
     uses: ./.github/workflows/proj1-main.yml
+    secrets: inherit
+    
   run-b2:
     uses: ./.github/workflows/proj1-b2.yml
+    secrets: inherit
+
   run-auto:
     uses: ./.github/workflows/proj1-auto.yml
+    secrets: inherit
