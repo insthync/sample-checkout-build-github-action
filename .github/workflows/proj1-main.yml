@@ -1,7 +1,6 @@
 name: proj1-main
 
 on:
-  workflow_dispatch: # Run manually
   push:
     branches: [ main ]
 
