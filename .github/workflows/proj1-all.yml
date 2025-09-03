@@ -1,0 +1,12 @@
+name: proj1-all
+
+on:
+  workflow_dispatch:
+  
+jobs:
+  run-main:
+    uses: ./.github/workflows/proj1-main.yml
+  run-b2:
+    uses: ./.github/workflows/proj1-b2.yml
+  run-auto:
+    uses: ./.github/workflows/proj1-auto.yml
