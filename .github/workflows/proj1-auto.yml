@@ -1,7 +1,8 @@
 name: proj1-auto
 
 on:
-  workflow_dispatch:
+  repository_dispatch:
+    types: [auto-build-docker-proj1]
 
 jobs:
   build-docker-proj1:
